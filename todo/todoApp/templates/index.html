@@ -50,9 +50,9 @@
     {% if todos.count > 0 %}
     <span class="fs-4">Список всех дел:</span>
     <table class="table">
-        <tr><th>Id</th><th>Название</th><th>Описание</th><th>Дата</th><th>Изменить</th></tr>
+        <tr><th>Id</th><th>Название</th><th>Описание</th><th>Дата</th><th>Изменить</th><th>Удалить</th></tr>
         {% for todo in todos %}
-        <tr><td>{{todo.id}}</td><td>{{todo.title}}</td><td>{{todo.description}}</td><td>{{todo.created_at}}</td><td><a href="edit/{{todo.id}}">Изменить</a></td></tr>
+        <tr><td>{{todo.id}}</td><td>{{todo.title}}</td><td>{{todo.description}}</td><td>{{todo.created_at}}</td><td><a href="edit/{{todo.id}}">Изменить</a></td><td><a href="delete/{{todo.id}}">Удалить</a></td></tr>
         {% endfor %}
     </table>
     {% endif %}

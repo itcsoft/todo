@@ -32,3 +32,12 @@ def edit(request, id):
     
     except Todo.DoesNotExist:
         return HttpResponseNotFound("<h2>Задачка не найдена</h2>")
+
+# Удаление данных из БД
+def delete(request, id):
+    try:
+        todo = Todo.objects.get(id=id)
+        todo.delete()
+        return HttpResponseRedirect('/')
+    except Todo.DoesNotExist:
+        return HttpResponseNotFound("<h2>Задачка не найдена</h2>")
